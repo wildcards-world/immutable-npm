@@ -2,14 +2,32 @@
 
 > A cli tool for managing immutable node packages
 
-## Instructions
+## Getting started
 
 ```
 npm link
 ```
 
 ```
-inpm "Ghost Busters"
+inpm install ghost-busters
+```
+
+## Usage
+
+```
+inpm install ghost-busters
+```
+
+```
+inpm uninstall ghost-busters
+```
+
+```
+inpm --help
+```
+
+```
+inpm --version
 ```
 
 ### Resources

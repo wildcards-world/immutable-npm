@@ -1,6 +1,6 @@
 {
   "name": "inpm-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,30 @@
   "homepage": "https://github.com/wild-cards/immutable-npm#readme",
   "bin": {
     "inpm": "./cli.js"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "import-jsx": "^4.0.0",
+    "ink": "^2.7.1",
+    "meow": "^7.0.0",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": true
+          }
+        }
+      ]
+    ]
   }
 }
