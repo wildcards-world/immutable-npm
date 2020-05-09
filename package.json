@@ -1,0 +1,23 @@
+{
+  "name": "inpm-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wild-cards/immutable-npm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wild-cards/immutable-npm/issues"
+  },
+  "homepage": "https://github.com/wild-cards/immutable-npm#readme",
+  "bin": {
+    "inpm": "./cli.js"
+  }
+}
