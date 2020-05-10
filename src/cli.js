@@ -12,13 +12,13 @@ import Experiment from "./experiment.js";
 const [, , ...args] = process.argv;
 
 const arg1 = args[0];
-// const arg2 = args[1];
+const arg2 = args[1] || "";
 
 let command = "";
 
 switch (arg1) {
   case "install":
-    command = <Install package="{args2}" />;
+    command = <Install package={arg2} />;
     break;
   case "uninstall":
     command = <Uninstall package="{args2}" />;
