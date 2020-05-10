@@ -99,3 +99,7 @@ inpm --version
 [React for command line lib](https://github.com/vadimdemedes/ink)
 
 [Arweave JS Docs](https://github.com/ArweaveTeam/arweave-js)
+
+[Arweave Block Explorer](https://viewblock.io/arweave)
+
+[Publishing a package to npm](https://zellwk.com/blog/publish-to-npm/)
