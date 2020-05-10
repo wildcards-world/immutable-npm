@@ -2,11 +2,12 @@
 import React from "react";
 import { render } from "ink";
 
-import initializeHelp from "./help";
-import Install from "./install.js";
-import Fallback from "./fallback.js";
+import initializeHelp from "./commands/help";
+import Install from "./commands/install.js";
+import Login from "./commands/login.js";
+import Fallback from "./commands/fallback.js";
 
-import Experiment from "./experiment.js"; // For Developing
+import Experiment from "./commands/experiment.js"; // For Developing
 
 const [, , ...args] = process.argv;
 
@@ -21,6 +22,9 @@ switch (args[0]) {
   case "e":
   case "experiment":
     command = <Experiment args={args} />;
+    break;
+  case "login":
+    command = <Login args={args} />;
     break;
   default:
     command = <Fallback args={args} />;
