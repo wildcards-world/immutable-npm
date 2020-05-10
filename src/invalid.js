@@ -1,7 +1,5 @@
-"use strict";
-const React = require("react");
-const PropTypes = require("prop-types");
-const { Text, Color } = require("ink");
+import React from "react";
+import { Text, Color } from "ink";
 
 const Invalid = () => {
   return (
@@ -11,4 +9,4 @@ const Invalid = () => {
   );
 };
 
-module.exports = Invalid;
+export default Invalid;

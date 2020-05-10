@@ -1,12 +1,13 @@
-"use strict";
-const React = require("react");
-const PropTypes = require("prop-types");
-const { Text, Color } = require("ink");
+import React, { useEffect } from "react";
+import { Text, Color } from "ink";
+import PropTypes from "prop-types";
+import { exec } from "child_process";
 
 const Install = (props) => {
   return (
     <Text>
-      Installing package: <Color green> {props.package}</Color>
+      Installing package:
+      <Color green> {props.package}</Color>
     </Text>
   );
 };
@@ -19,4 +20,4 @@ Install.defaultProps = {
   package: "",
 };
 
-module.exports = Install;
+export default Install;
