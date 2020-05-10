@@ -86,6 +86,8 @@ inpm --version
 
 - Cache previously used commands (speed improvement)
 
+- Allow configurable underlying package manager so that users can switch between yarn and npm as the underlying tool
+
 - Change the name to something that is equally simple and doesn't conflict with [inpm](https://www.npmjs.com/package/inpm). Part of me wishes I could contact the developer of `inpm` (npm registry version) and ask to take the name but that would truly go against exactly the problem this package solves 😂
 
 ## Resources used to build this tool
