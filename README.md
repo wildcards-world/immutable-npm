@@ -86,7 +86,7 @@ inpm --version
 
 - Cache previously used commands (speed improvement)
 
-- Change the name to something that is equally simple and doesn't conflict with [inpm](https://www.npmjs.com/package/inpm). Part of me wishes I could contact the developer of `inpm` npm registry version and ask to take the name but that would trully go against exactly the problem I am solving 😂
+- Change the name to something that is equally simple and doesn't conflict with [inpm](https://www.npmjs.com/package/inpm). Part of me wishes I could contact the developer of `inpm` (npm registry version) and ask to take the name but that would truly go against exactly the problem this package solves 😂
 
 ## Resources used to build this tool
 
