@@ -10,19 +10,13 @@ import Experiment from "./experiment.js"; // For Developing
 
 const [, , ...args] = process.argv;
 
-// console.log(process);
-
-const arg1 = args[0];
-const arg2 = args[1] || "";
-
-let subCommand = args.join(" ");
-
 let command = "";
 
-switch (arg1) {
+// Command routing
+switch (args[0]) {
   case "i":
   case "install":
-    command = <Install package={arg2} />;
+    command = <Install args={args} />;
     break;
   case "e":
   case "experiment":
