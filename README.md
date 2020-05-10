@@ -5,7 +5,15 @@
 ## Getting started
 
 ```
+chmod +x ./src/cli.js
+```
+
+```
 npm link
+```
+
+```
+npm run babel-build
 ```
 
 ```
