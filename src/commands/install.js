@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { Box, Text, Color } from "ink";
 import PropTypes from "prop-types";
 import { spawn } from "child_process";
-import Arweave from "./utils/arweave";
+import Arweave from "../utils/arweave";
 
-import Loader from "./components/loader";
+import Loader from "../components/loader";
 
 const Install = ({ args }) => {
   const replaceArgsNPMSource = (args) => {
