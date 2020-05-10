@@ -9,7 +9,7 @@ const Fallback = ({ args }) => {
     let npm = spawn("npm", args);
 
     npm.stdout.on("data", function (data) {
-      console.log("stdout: " + data.toString());
+      console.log(data.toString());
     });
 
     npm.stderr.on("data", function (data) {
@@ -17,7 +17,7 @@ const Fallback = ({ args }) => {
     });
 
     npm.on("exit", function (code) {
-      console.log("child process exited with code " + code.toString());
+      console.log("Complete: " + code.toString());
     });
   }, []);
 

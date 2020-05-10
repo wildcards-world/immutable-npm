@@ -2,21 +2,29 @@ import React, { useEffect } from "react";
 import { Text, Color } from "ink";
 import PropTypes from "prop-types";
 import { exec } from "child_process";
-import PackageNameMapper from "./utils/immutable-package-name-mapper";
+import Arweave from "./utils/arweave";
 
 const Install = (props) => {
   useEffect(() => {
     console.log(`echo hello`);
     exec(
-      `npm install ${PackageNameMapper(props.package)}`,
+      `npm install ${Arweave.ImmutablePackageNameMapping(props.package)}`,
       (error, stdout, stderr) => {
         if (error) {
-          console.log(`error: ${error.message}`);
-          return;
+          return (
+            <Text>
+              Error:
+              <Color red> {error.message} </Color>
+            </Text>
+          );
         }
         if (stderr) {
-          console.log(`stderr: ${stderr}`);
-          return;
+          return (
+            <Text>
+              Std Error:
+              <Color red> {stderr} </Color>
+            </Text>
+          );
         }
         console.log(`stand out :${stdout}`);
       }
