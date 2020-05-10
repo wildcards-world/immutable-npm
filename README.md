@@ -1,12 +1,15 @@
-# inpm cli tool
+# `inpm` cli tool
 
 > A cli tool for managing immutable node packages using arweave (backwards compatibale with npm)
 
 _Under active development as part of the [New York Blockchain Week Hackathon](https://gitcoin.co/hackathon/new-york-blockchain-week/?tab=hackathon:20)_
 
-## How it works
+## Table of Contents
 
----
+    *[How it works](#how-it-works)
+        *[Problem](#problem)
+
+## How it works
 
 ### Problem
 
@@ -31,8 +34,6 @@ Example usage `inpm install arql-ops`
 #### Under the hood
 
 ## Getting started
-
----
 
 1. Clone the repo ⤴️
 2. Build the program
@@ -61,14 +62,12 @@ inpm install ghost-busters
 
 ## Usage
 
----
-
 ```
 inpm install ghost-busters
 ```
 
 ```
-inpm uninstall ghost-busters
+inpm {any other normal npm command}
 ```
 
 ```
@@ -79,7 +78,15 @@ inpm --help
 inpm --version
 ```
 
-### Resources
+## Further work
+
+- Refactor into ReasonML (Functional typed language, I would like to get more familiar with)
+
+- Expand on npm functionality
+
+- Cache previously used commands (speed improvement)
+
+## Resources used to build this tool
 
 [creating a node js cli tool](https://x-team.com/blog/a-guide-to-creating-a-nodejs-command/)
 
