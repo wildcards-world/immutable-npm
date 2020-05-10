@@ -18,10 +18,14 @@
   },
   "homepage": "https://github.com/wild-cards/immutable-npm#readme",
   "bin": {
-    "inpm": "./cli.js"
+    "inpm": "./bin/cli.js"
+  },
+  "scripts": {
+    "babel-build": "./node_modules/.bin/babel src --out-dir bin"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "@babel/preset-react": "^7.9.4",
     "import-jsx": "^4.0.0",
     "ink": "^2.7.1",
     "meow": "^7.0.0",
