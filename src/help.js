@@ -1,6 +1,6 @@
-const meow = require("meow");
+import meow from "meow";
 
-module.export = meow(`
+export default meow(`
 	Usage
 	  $ inpm 
 
