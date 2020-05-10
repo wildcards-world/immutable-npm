@@ -5,25 +5,24 @@ import { spawn } from "child_process";
 
 const Fallback = ({ args }) => {
   useEffect(() => {
-    console.log(`Test spawn`);
-    let npm = spawn("npm", args);
+    let npmFallbackCommand = spawn("npm", args);
 
-    npm.stdout.on("data", function (data) {
+    npmFallbackCommand.stdout.on("data", function (data) {
       console.log(data.toString());
     });
 
-    npm.stderr.on("data", function (data) {
+    npmFallbackCommand.stderr.on("data", function (data) {
       console.log("stderr: " + data.toString());
     });
 
-    npm.on("exit", function (code) {
+    npmFallbackCommand.on("exit", function (code) {
       console.log("Complete: " + code.toString());
     });
   }, []);
 
   return (
     <Text>
-      <Color red>Fallback to npm</Color>
+      <Color green>Fallback to native npm command</Color>
     </Text>
   );
 };

@@ -1,50 +1,55 @@
 import React, { useEffect } from "react";
-import { Text, Color } from "ink";
+import { Box, Text, Color } from "ink";
 import PropTypes from "prop-types";
-import { exec } from "child_process";
+import { spawn } from "child_process";
 import Arweave from "./utils/arweave";
 
-const Install = (props) => {
+import Loader from "./components/loader";
+
+const Install = ({ args }) => {
+  const replaceArgsNPMSource = (args) => {
+    args[1] = Arweave.ImmutablePackageNameMapping(args[1]);
+    console.log("/////////////////////");
+    console.log(args[1]);
+    console.log("/////////////////////");
+    return args;
+  };
+
   useEffect(() => {
-    console.log(`echo hello`);
-    exec(
-      `npm install ${Arweave.ImmutablePackageNameMapping(props.package)}`,
-      (error, stdout, stderr) => {
-        if (error) {
-          return (
-            <Text>
-              Error:
-              <Color red> {error.message} </Color>
-            </Text>
-          );
-        }
-        if (stderr) {
-          return (
-            <Text>
-              Std Error:
-              <Color red> {stderr} </Color>
-            </Text>
-          );
-        }
-        console.log(`stand out :${stdout}`);
-      }
-    );
+    let npmImmutableSource = spawn("npm", args);
+
+    npmImmutableSource.stdout.on("data", function (data) {
+      console.log(data.toString());
+    });
+
+    npmImmutableSource.stderr.on("data", function (data) {
+      console.log("stderr: " + data.toString());
+    });
+
+    npmImmutableSource.on("exit", function (code) {
+      console.log("Complete: " + code.toString());
+    });
   }, []);
 
   return (
-    <Text>
-      Installing package:
-      <Color green> {props.package}</Color>
-    </Text>
+    <Box flexDirection="column" padding={2}>
+      <Box paddingTop={1}>
+        <Text>
+          Installing package:
+          <Color hex="#1E90FF"> {args[1]}</Color>
+        </Text>
+      </Box>
+      <Loader />
+    </Box>
   );
 };
 
 Install.propTypes = {
-  package: PropTypes.string,
+  args: PropTypes.array,
 };
 
 Install.defaultProps = {
-  package: "",
+  args: [],
 };
 
 export default Install;

@@ -47,7 +47,7 @@ const Counter = () => {
   }, []);
 
   return (
-    <Box>
+    <Box paddingTop={1} paddingBottom={1}>
       <Text>
         <Color grey>{waitPeriodStatus.loaderType}</Color>
       </Text>
