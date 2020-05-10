@@ -80,11 +80,13 @@ inpm --version
 
 ## Further work
 
-- Refactor into ReasonML (Functional typed language, I would like to get more familiar with)
+- Refactor into ReasonML (Functional typed language I would like to get more familiar with)
 
 - Expand on npm functionality
 
 - Cache previously used commands (speed improvement)
+
+- Change the name to something that is equally simple and doesn't conflict with [inpm](https://www.npmjs.com/package/inpm). Part of me wishes I could contact the developer of `inpm` npm registry version and ask to take the name but that would trully go against exactly the problem I am solving 😂
 
 ## Resources used to build this tool
 
