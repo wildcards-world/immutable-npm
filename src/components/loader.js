@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Text, Color } from "ink";
 import Spinner from "ink-spinner";
 
-// TODO: Solve spinner rerender bug :/
+// TODO: Solve spinner rerender bug with more than 2 loaders :/
 
 const Counter = () => {
   const [waitPeriodStatus, setWaitPeriodStatus] = useState({
@@ -21,30 +21,6 @@ const Counter = () => {
     );
     return () => clearTimeout(timer);
   }, []);
-
-  // useEffect(() => {
-  //   let timer2 = setTimeout(
-  //     () =>
-  //       setWaitPeriodStatus({
-  //         loaderType: <Spinner type="moon" />,
-  //         text: <Color green>Still Still loading</Color>,
-  //       }),
-  //     3000
-  //   );
-  //   return () => clearTimeout(timer2);
-  // }, []);
-
-  // useEffect(() => {
-  //   let timer2 = setTimeout(
-  //     () =>
-  //       setWaitPeriodStatus({
-  //         loaderType: <Spinner type="earth" />,
-  //         text: <Color green>Still Still Still loading</Color>,
-  //       }),
-  //     5000
-  //   );
-  //   return () => clearTimeout(timer2);
-  // }, []);
 
   return (
     <Box paddingTop={1} paddingBottom={1}>

@@ -6,8 +6,15 @@ _Under active development as part of the [New York Blockchain Week Hackathon](ht
 
 ## Table of Contents
 
-    *[How it works](#how-it-works)
-        *[Problem](#problem)
+- [`inpm` cli tool](#-inpm--cli-tool)
+  - [Table of Contents](#table-of-contents)
+  - [How it works](#how-it-works)
+    - [Problem](#problem)
+    - [Solution](#solution)
+  - [Getting started](#getting-started)
+  - [Usage](#usage)
+  - [Further work](#further-work)
+  - [Resources used to build this tool](#resources-used-to-build-this-tool)
 
 ## How it works
 
@@ -30,8 +37,6 @@ Insert Immutable Node Package Manager 🤯
 A dead simple npm wrapper that installs the package from arweave an immutable data storage solution leveraging blockchain technology. This tool understands the market adoption of the public npm registry and so is not a replacement but acts as an improvement where by it downloads the package from arweave first and if the package is not found in arweave it falls back to a regular npm request.
 
 Example usage `inpm install arql-ops`
-
-#### Under the hood
 
 ## Getting started
 
@@ -103,3 +108,5 @@ inpm --version
 [Arweave Block Explorer](https://viewblock.io/arweave)
 
 [Publishing a package to npm](https://zellwk.com/blog/publish-to-npm/)
+
+[TOC tool](https://ecotrust-canada.github.io/markdown-toc/)
