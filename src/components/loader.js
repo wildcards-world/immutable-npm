@@ -7,7 +7,7 @@ import Spinner from "ink-spinner";
 const Counter = () => {
   const [waitPeriodStatus, setWaitPeriodStatus] = useState({
     loaderType: <Spinner type="moon" />,
-    text: <Color green>Loading</Color>,
+    text: <Color grey>Loading</Color>,
   });
 
   useEffect(() => {
@@ -15,36 +15,36 @@ const Counter = () => {
       () =>
         setWaitPeriodStatus({
           loaderType: <Spinner type="pong" />,
-          text: <Color green>Still loading</Color>,
+          text: <Color grey>loading...</Color>,
         }),
-      2000
+      3000
     );
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    let timer2 = setTimeout(
-      () =>
-        setWaitPeriodStatus({
-          loaderType: <Spinner type="moon" />,
-          text: <Color green>Still Still loading</Color>,
-        }),
-      3000
-    );
-    return () => clearTimeout(timer2);
-  }, []);
+  // useEffect(() => {
+  //   let timer2 = setTimeout(
+  //     () =>
+  //       setWaitPeriodStatus({
+  //         loaderType: <Spinner type="moon" />,
+  //         text: <Color green>Still Still loading</Color>,
+  //       }),
+  //     3000
+  //   );
+  //   return () => clearTimeout(timer2);
+  // }, []);
 
-  useEffect(() => {
-    let timer2 = setTimeout(
-      () =>
-        setWaitPeriodStatus({
-          loaderType: <Spinner type="earth" />,
-          text: <Color green>Still Still Still loading</Color>,
-        }),
-      5000
-    );
-    return () => clearTimeout(timer2);
-  }, []);
+  // useEffect(() => {
+  //   let timer2 = setTimeout(
+  //     () =>
+  //       setWaitPeriodStatus({
+  //         loaderType: <Spinner type="earth" />,
+  //         text: <Color green>Still Still Still loading</Color>,
+  //       }),
+  //     5000
+  //   );
+  //   return () => clearTimeout(timer2);
+  // }, []);
 
   return (
     <Box paddingTop={1} paddingBottom={1}>

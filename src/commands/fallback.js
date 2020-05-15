@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { Text, Color } from "ink";
+import { Text, Color, Box } from "ink";
 import PropTypes from "prop-types";
 import { spawn } from "child_process";
+import Spinner from "ink-spinner";
 
 const Fallback = ({ args }) => {
   useEffect(() => {
@@ -21,9 +22,18 @@ const Fallback = ({ args }) => {
   }, []);
 
   return (
-    <Text>
-      <Color green>Fallback to native npm command</Color>
-    </Text>
+    <>
+      <Box>
+        <Text>
+          <Color yellow>Fallback to native npm command</Color>
+        </Text>
+      </Box>
+      <Box>
+        <Text>
+          <Spinner type="dots" /> Loading...
+        </Text>
+      </Box>
+    </>
   );
 };
 

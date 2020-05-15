@@ -39,7 +39,7 @@ Example usage `inpm install arql-ops`
 2. Build the program
 
 ```
-npm run babel-build
+npm run babel
 ```
 
 3. Make the package executable

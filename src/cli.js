@@ -11,23 +11,19 @@ import Experiment from "./commands/experiment.js"; // For Developing
 
 const [, , ...args] = process.argv;
 
-let command = "";
-
 // Command routing
 switch (args[0]) {
   case "i":
   case "install":
-    command = <Install args={args} />;
+    render(<Install args={args} />);
     break;
   case "e":
   case "experiment":
-    command = <Experiment args={args} />;
+    render(<Experiment args={args} />);
     break;
   case "login":
-    command = <Login args={args} />;
+    render(<Login args={args} />);
     break;
   default:
-    command = <Fallback args={args} />;
+    render(<Fallback args={args} />);
 }
-
-render(command);
