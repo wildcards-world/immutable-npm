@@ -8,6 +8,7 @@ export default meow(`
 		install  package-name
 		uninstall  package-name
 		login 
+		publish path-to-tar.gz-package
         --help
         --version
 
@@ -20,6 +21,9 @@ export default meow(`
     
 	  $ inpm login
 	  This function configures your arweave wallet to the application
+	 
+	  $ inpm publish path-to-tar.gz-package
+	  publish a package on arweave
 	  
       $ inpm --help
       $ inpm --version	  
