@@ -1,17 +1,16 @@
 import React from "react";
 import { render, Box, useApp } from "ink";
 import { UncontrolledTextInput } from "ink-text-input";
-import useExit from "../utils/useExit";
 var fs = require("fs");
 
-const SearchQuery = () => {
+const WalletPathInput = () => {
   const { exit } = useApp();
   const handleSubmit = (query) => {
     fs.writeFile(
       "./walletPath.json",
       '{ "walletPath": "' + query + '"}',
       () => {
-        console.log("Saved path");
+        console.log("Saved path to your wallet");
         exit();
       }
     );
@@ -25,4 +24,4 @@ const SearchQuery = () => {
   );
 };
 
-export default SearchQuery;
+export default WalletPathInput;

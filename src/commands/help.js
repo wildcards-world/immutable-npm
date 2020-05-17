@@ -7,6 +7,7 @@ export default meow(`
 	Options
 		install  package-name
 		uninstall  package-name
+		login 
         --help
         --version
 
@@ -16,6 +17,9 @@ export default meow(`
 	  
       $ inpm uninstall ghost-busters
 	  Uninstalling ghost-busters
+    
+	  $ inpm login
+	  This function configures your arweave wallet to the application
 	  
       $ inpm --help
       $ inpm --version	  

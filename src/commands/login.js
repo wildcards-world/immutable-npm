@@ -1,5 +1,5 @@
 import React from "react";
-import { render, Box, Text, Color } from "ink";
+import { Box, Text, Color } from "ink";
 import WalletPathInput from "../components/walletPathInput";
 
 const Login = () => {

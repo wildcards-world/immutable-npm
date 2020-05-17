@@ -116,3 +116,7 @@ inpm --version
 [Publishing a package to npm](https://zellwk.com/blog/publish-to-npm/)
 
 [TOC tool](https://ecotrust-canada.github.io/markdown-toc/)
+
+[Console to svg tool](https://nbedos.github.io/termtosvg/)
+
+`tar -zcvf my-package.tar.gz my-project`
