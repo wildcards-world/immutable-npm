@@ -1,40 +1,53 @@
 // Decentralised key value store db
-
 const IPFS = require("ipfs");
 const OrbitDB = require("orbit-db");
 
-// Create IPFS instance
-
-const experiment = async () => {
+const initializeNewDB = async (collectionName) => {
   const ipfs = await IPFS.create();
-
   const orbitdb = await OrbitDB.createInstance(ipfs);
-  // TODO: Flesh this out in production -> public write access will result in possible attack vectors
+
+  collectionName = collectionName || "inpm";
+
+  // create db
   const options = {
     // Give write access to everyone
     accessController: {
       write: ["*"],
     },
   };
+  // TODO: Flesh this out in production -> public write access will result in possible attack vectors
 
-  // create db
-  // const db = await orbitdb.keyvalue("inpm", options);
+  const db = await orbitdb.keyvalue(collectionName, options);
 
-  const db = await orbitdb.open(
-    "/orbitdb/zdpuAq87qWjkjJcyz7wFToTXFDA4YsYw2XAVNf6TuStw9DP1F/inpm"
-  );
-  const address = db.address;
+  // const address = db.address;
 
-  console.log(address.toString());
-
-  await db.put("my-package", "E1lBJ20fspWahlNxOl5Gn6Whduhveqo7qe7Sl5Hf0Eo");
-  await db.put("arql-ops", "ITTPLYoxidZzAJP50FQ03QJUSkkh9iKHcmMcLZOvqtQ");
-
-  const packageId = await db.get("my-package");
-  const arqpackageId = await db.get("arql-ops");
-
-  console.log(packageId);
-  console.log(arqpackageId);
+  // console.log(address.toString());
 };
 
-export default experiment;
+const connectToCollection = async () => {
+  const ipfs = await IPFS.create();
+  const orbitdb = await OrbitDB.createInstance(ipfs);
+
+  const db = await orbitdb.open(
+    "/orbitdb/zdpuAq87qWjkjJcyz7wFToTXFDA4YsYw2XAVNf6TuStw9DP1F/inpm" // Ipfs hash & collectionName
+  );
+
+  await db.load();
+
+  return db;
+};
+
+const savePackage = async (db, packageName, packageId) => {
+  await db.put(packageName, packageId);
+};
+
+const getPackage = async (db, packageName) => {
+  return await db.get(packageName);
+};
+
+export default {
+  initializeNewDB,
+  connectToCollection,
+  savePackage,
+  getPackage,
+};
