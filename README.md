@@ -4,6 +4,8 @@
 
 _Under active development as part of the [New York Blockchain Week Hackathon](https://gitcoin.co/hackathon/new-york-blockchain-week/?tab=hackathon:20)_
 
+<img src="media/demo.svg" width="600">
+
 ## Table of Contents
 
 - [`inpm` cli tool](#-inpm--cli-tool)
