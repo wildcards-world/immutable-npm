@@ -108,7 +108,9 @@ inpm --version
 
 - Expand on npm functionality
 
-- Cache previously used commands (speed improvement)
+- Add functionality for installing package versions eg `inpm i arql-ops@0.1.0`
+
+- Autocomplete commands (speed improvement)
 
 - Allow configurable underlying package manager so that users can switch between yarn and npm as the underlying tool
 
