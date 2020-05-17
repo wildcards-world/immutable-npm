@@ -72,6 +72,10 @@ inpm install ghost-busters
 ```
 
 ```
+inpm install arql-ops
+```
+
+```
 inpm {any other normal npm command}
 ```
 
@@ -85,7 +89,7 @@ inpm --version
 
 ## Further work
 
-- Refactor into ReasonML (Functional typed language I would like to get more familiar with)
+- Refactor into ReasonML (Functional typed language I would like to get more familiar with) - [binding](https://github.com/cometkim/bs-ink)
 
 - Expand on npm functionality
 

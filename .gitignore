@@ -3,3 +3,5 @@ node_modules/
 bin/
 
 .DS_Store
+
+arweave-wallet-key.json

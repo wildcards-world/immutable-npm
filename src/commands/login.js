@@ -1,31 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { render, useInput, Box, AppContext, Text, Color } from "ink";
-import Loader from "../components/loader";
-import PropTypes from "prop-types";
+import React from "react";
+import { render, Box, Text, Color } from "ink";
+import WalletPathInput from "../components/walletPathInput";
 
-const TextInput = () => {
-  const [inputText, setInputText] = useState("");
-
-  useInput((input, key) => {
-    if (key.enter) {
-      console.log("save the path to config");
-      setInputText("");
-    }
-    setInputText(inputText + input);
-  });
-
-  return (
-    <Box flexDirection="column">
-      <Box paddingLeft={1} paddingTop={1}>
-        | > {inputText}
-      </Box>
-    </Box>
-  );
-};
-
-const Login = ({ args }) => {
-  useEffect(() => {}, []);
-
+const Login = () => {
   return (
     <Box flexDirection="column" padding={2}>
       <Box paddingTop={1}>
@@ -37,20 +14,11 @@ const Login = ({ args }) => {
       </Box>
       <Box>
         <Text underline>
-          <TextInput />
+          <WalletPathInput />
         </Text>
       </Box>
-      {/* <Loader /> */}
     </Box>
   );
-};
-
-Login.propTypes = {
-  args: PropTypes.array,
-};
-
-Login.defaultProps = {
-  args: [],
 };
 
 export default Login;

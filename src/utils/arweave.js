@@ -1,6 +1,8 @@
 // https://github.com/ArweaveTeam/arweave-js
 
+import React, { useState } from "react";
 const Arweave = require("arweave/node");
+const wallet = require("../../arweave-wallet-key.json");
 
 const arweaveMainetConfig = {
   host: "arweave.net", // Hostname or IP address for a Arweave host
@@ -11,6 +13,16 @@ const arweaveMainetConfig = {
 };
 
 const arweave = Arweave.init(arweaveMainetConfig);
+
+const key = async (pathToWallet) =>
+  await arweave.wallets.jwkToAddress(require("../." + pathToWallet));
+
+const connectWallet = async () => {
+  return await arweave.wallets.jwkToAddress(wallet);
+  // .then((address) => {
+  //   return address;
+  // });
+};
 
 const createDataTransaction = async (content) => {
   console.log("store data on arweave");
@@ -23,8 +35,15 @@ const createDataTransaction = async (content) => {
     key
   );
 
-  console.log(transaction);
+  return transaction;
 };
+
+const addTagsToTransaction = (transaction, tags) => {
+  transaction.addTag("Content-Type", "application/x-gzip");
+  transaction.addTag("key2", "value2");
+};
+
+const experiment = () => {};
 
 const getTransaction = (transactionId) =>
   arweave.transactions.get(transactionId).then((transaction) => {
@@ -54,6 +73,7 @@ const ImmutablePackageNameMapping = (familiarPackageName) => {
 
 export default {
   arweave,
+  connectWallet,
   createDataTransaction,
   getTransaction,
   getTransactionData,
