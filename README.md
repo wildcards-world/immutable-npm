@@ -15,6 +15,7 @@ _Under active development as part of the [New York Blockchain Week Hackathon](ht
     - [Solution](#solution)
   - [Getting started](#getting-started)
   - [Usage](#usage)
+  - [Demo of login and publish](#Demo-of-login-and-publish)
   - [Further work](#further-work)
   - [Resources used to build this tool](#resources-used-to-build-this-tool)
 
@@ -78,6 +79,14 @@ inpm install arql-ops
 ```
 
 ```
+inpm login
+```
+
+```
+inpm publish ./my-package.tar.gz
+```
+
+```
 inpm {any other normal npm command}
 ```
 
@@ -88,6 +97,10 @@ inpm --help
 ```
 inpm --version
 ```
+
+## Demo of login and publish
+
+<img src="media/login-demo.svg" width="600">
 
 ## Further work
 
