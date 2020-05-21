@@ -23,7 +23,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-react": "^7.9.4",
-    "arql-ops": "https://kybjhezuyftg.arweave.net/ITTPLYoxidZzAJP50FQ03QJUSkkh9iKHcmMcLZOvqtQ",
+    "arql-ops": "https://arweave.net/ITTPLYoxidZzAJP50FQ03QJUSkkh9iKHcmMcLZOvqtQ",
     "arweave": "^1.7.0",
     "fs": "0.0.1-security",
     "import-jsx": "^4.0.0",
@@ -33,8 +33,7 @@
     "ipfs": "^0.43.3",
     "meow": "^7.0.0",
     "orbit-db": "^0.23.1",
-    "react": "^16.13.1",
-    "test": "https://arweave.net/XOgrAV77_O-Kd5llk2LnDextMIvjXsgxtvRpyrIWc68"
+    "react": "^16.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

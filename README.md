@@ -18,6 +18,7 @@ _Under active development as part of the [New York Blockchain Week Hackathon](ht
   - [Demo of login and publish](#Demo-of-login-and-publish)
   - [Further work](#further-work)
   - [Resources used to build this tool](#resources-used-to-build-this-tool)
+  - [Debugging help commands](#Debugging-help-commands)
 
 ## How it works
 
@@ -39,9 +40,13 @@ Insert Immutable Node Package Manager 🤯
 
 A dead simple npm wrapper that installs the package from arweave an immutable data storage solution leveraging blockchain technology. This tool understands the market adoption of the public npm registry and so is not a replacement but acts as an improvement where by it downloads the package from arweave first and if the package is not found in arweave it falls back to a regular npm request.
 
+The developer ux is focussed around being an improvement that doesn't require any switching costs (apart from the getting started part). The developer can use similar (and all the same) commands to `npm` but rather using `inpm`. `npm` being a tool most developers are already familiar with, while incrementally improving their code base through immutability.
+
 Example usage `inpm install arql-ops`
 
 ## Getting started
+
+// https://arweave.net/J9tpkHVNP9TFJYjl0oB5WIv_k1J5knIU_shlaOOuZMM
 
 1. Clone the repo ⤴️
 2. Build the program
@@ -65,13 +70,13 @@ npm link
 5. Test by installing some package
 
 ```
-inpm install ghost-busters
+inpm install leftpad
 ```
 
 ## Usage
 
 ```
-inpm install ghost-busters
+inpm install leftpad
 ```
 
 ```
@@ -134,4 +139,8 @@ inpm --version
 
 [Console to svg tool](https://nbedos.github.io/termtosvg/)
 
+## Debugging help commands
+
 `tar -zcvf my-package.tar.gz my-package`
+`npm unlink --no-save inpm`
+`npm unlink`

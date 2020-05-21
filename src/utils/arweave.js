@@ -1,8 +1,14 @@
 // https://github.com/ArweaveTeam/arweave-js
+import OrbitDb from "../utils/orbitdb";
 
 // import React, { useEffect, useState } from "react";
 const Arweave = require("arweave/node");
-const key = require("../../" + require("../../walletPath").walletPath);
+const key = "hacky";
+try {
+  const key = require("../../" + require("../../walletPath").walletPath);
+} catch {
+  // console.warn("key not set yet, run inpm login");
+}
 
 const arweaveMainetConfig = {
   host: "arweave.net", // Hostname or IP address for a Arweave host
@@ -59,16 +65,24 @@ const arweave = Arweave.init(arweaveMainetConfig);
 //       console.log(data);
 //     });
 
-// TODO: swap with db
-const ImmutablePackageNameMapping = (familiarPackageName) => {
-  switch (familiarPackageName) {
-    case "arql-ops":
-      return "https://kybjhezuyftg.arweave.net/ITTPLYoxidZzAJP50FQ03QJUSkkh9iKHcmMcLZOvqtQ";
-    case "my-package":
-      return "https://arweave.net/E1lBJ20fspWahlNxOl5Gn6Whduhveqo7qe7Sl5Hf0Eo";
-    default:
-      return familiarPackageName;
+const ImmutablePackageNameMapping = async (familiarPackageName) => {
+  const db = await OrbitDb.connectToCollection();
+  let id = await OrbitDb.getPackage(db, familiarPackageName);
+  console.log(id);
+  if (id) {
+    return `https://arweave.net/${id}`;
+  } else {
+    return familiarPackageName;
   }
+
+  // switch (familiarPackageName) {
+  //   case "arql-ops":
+  //     return "https://kybjhezuyftg.arweave.net/ITTPLYoxidZzAJP50FQ03QJUSkkh9iKHcmMcLZOvqtQ";
+  //   case "my-package":
+  //     return "https://arweave.net/E1lBJ20fspWahlNxOl5Gn6Whduhveqo7qe7Sl5Hf0Eo";
+  //   default:
+  //     return familiarPackageName;
+  // }
 };
 
 export default {
