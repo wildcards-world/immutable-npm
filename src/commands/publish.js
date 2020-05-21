@@ -51,6 +51,11 @@ const Publish = ({ args }) => {
 
     let myPackage = fs.readFileSync(packageZipPath);
 
+    setStatusMessage({
+      color: "#FE4403",
+      message: "Package Read",
+    });
+
     let transaction = await Arweave.arweave.createTransaction(
       {
         data: myPackage,
@@ -60,9 +65,25 @@ const Publish = ({ args }) => {
     transaction.addTag("Content-Type", "application/x-gzip");
     transaction.addTag("package-name", packageName);
 
+    setStatusMessage({
+      color: "#FE4403",
+      message: "transaction: " + transaction,
+    });
+
     // console.log(transaction);
     const sign = await Arweave.arweave.transactions.sign(transaction, key);
+
+    setStatusMessage({
+      color: "#FE4403",
+      message: "signed transaction ",
+    });
+
     const response = await Arweave.arweave.transactions.post(transaction);
+
+    setStatusMessage({
+      color: "#FE4403",
+      message: "response from save to arweave: " + response.toString(),
+    });
 
     const packageId = JSON.parse(response.config.data).id;
 

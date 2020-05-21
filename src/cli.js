@@ -8,6 +8,7 @@ import Install from "./commands/install";
 import Login from "./commands/login";
 import Fallback from "./commands/fallback";
 import Publish from "./commands/publish";
+import ZipHelper from "./commands/zipHelper";
 
 import Experiment from "./commands/experiment"; // For Developing
 
@@ -28,6 +29,9 @@ switch (args[0]) {
     break;
   case "publish":
     render(<Publish args={args} />);
+    break;
+  case "zip":
+    render(<ZipHelper args={args} />);
     break;
   default:
     render(<Fallback args={args} />);

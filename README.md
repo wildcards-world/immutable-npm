@@ -134,4 +134,4 @@ inpm --version
 
 [Console to svg tool](https://nbedos.github.io/termtosvg/)
 
-`tar -zcvf my-package.tar.gz my-project`
+`tar -zcvf my-package.tar.gz my-package`

@@ -6,6 +6,8 @@ bin/
 
 arweave-wallet-key.json
 
+walletPath.json
+
 todo.md
 
 orbitdb
