@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { spawn } from "child_process";
 import orbitdb from "../utils/orbitdb";
 // const Arweave = require("arweave/node");
+import Arweave from "../utils/arweave";
 
 import Loader from "../components/loader";
 import Spinner from "ink-spinner";
@@ -15,7 +16,7 @@ const Install = ({ args }) => {
   const [state, setState] = useState("");
 
   const replaceArgsNPMSource = async (args) => {
-    let installLocation = await orbitdb.ImmutablePackageNameMapping(args[1]);
+    let installLocation = await Arweave.ImmutablePackageNameMapping(args[1]);
     setIsImmutablePackage(installLocation != args[1]);
     args[1] = installLocation;
     return args;
