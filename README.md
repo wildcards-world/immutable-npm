@@ -44,9 +44,15 @@ The developer ux is focussed around being an improvement that doesn't require an
 
 Example usage `inpm install arql-ops`
 
+#### Under the hood
+
+The cli tool is built using react - ink as the cli, arweave as the immutable package storage registry, orbitDB as the decentralized key value storage (mapping packages to arweave endpoints), and where a command is not know falls back to npm.
+
 ## Getting started
 
 <!-- // https://arweave.net/J9tpkHVNP9TFJYjl0oB5WIv_k1J5knIU_shlaOOuZMM -->
+
+0. Assumes nodejs & npm is already installed
 
 1. Clone the repo ⤴️
 2. Build the program

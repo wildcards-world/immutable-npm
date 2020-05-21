@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Box, Text, Color, render, useApp } from "ink";
 import PropTypes from "prop-types";
 import { spawn } from "child_process";
-import Arweave from "../utils/arweave";
+import orbitdb from "../utils/orbitdb";
+// const Arweave = require("arweave/node");
 
 import Loader from "../components/loader";
 import Spinner from "ink-spinner";
@@ -14,16 +15,16 @@ const Install = ({ args }) => {
   const [state, setState] = useState("");
 
   const replaceArgsNPMSource = async (args) => {
-    let installLocation = await Arweave.ImmutablePackageNameMapping(args[1]);
+    let installLocation = await orbitdb.ImmutablePackageNameMapping(args[1]);
     setIsImmutablePackage(installLocation != args[1]);
     args[1] = installLocation;
     return args;
   };
 
   useEffect(() => {
-    let installPackages = async () => {
-      setState("START");
-      let newArgs = await replaceArgsNPMSource(args);
+    // let installPackages = async () => {
+    setState("START");
+    replaceArgsNPMSource(args).then((newArgs) => {
       let npmImmutableSource = spawn("npm", newArgs);
 
       npmImmutableSource.stdout.on("data", function (data) {
@@ -35,6 +36,7 @@ const Install = ({ args }) => {
       npmImmutableSource.stderr.on("data", function (data) {
         console.log("warnings: " + data.toString());
         setState("ERROR");
+        exit();
       });
 
       npmImmutableSource.on("exit", function (code) {
@@ -42,8 +44,9 @@ const Install = ({ args }) => {
         setState("COMPLETE");
         exit();
       });
-    };
-    installPackages();
+    });
+    // };
+    // installPackages();
   }, []);
 
   return (

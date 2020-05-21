@@ -14,7 +14,7 @@ const Publish = ({ args }) => {
   });
 
   const publishPackage = async () => {
-    let key = Arweave.key;
+    let key = Arweave.getKey();
 
     if (key == "hacky") {
       // so so hacky but running out of time

@@ -3,9 +3,10 @@ import OrbitDb from "../utils/orbitdb";
 
 // import React, { useEffect, useState } from "react";
 const Arweave = require("arweave/node");
-const key = "hacky";
+let key = "hacky";
 try {
-  const key = require("../../" + require("../../walletPath").walletPath);
+  key = require("../../" + require("../../walletPath").walletPath);
+  // console.log("key set", key);
 } catch {
   // console.warn("key not set yet, run inpm login");
 }
@@ -65,24 +66,16 @@ const arweave = Arweave.init(arweaveMainetConfig);
 //       console.log(data);
 //     });
 
-const ImmutablePackageNameMapping = async (familiarPackageName) => {
-  const db = await OrbitDb.connectToCollection();
-  let id = await OrbitDb.getPackage(db, familiarPackageName);
-  console.log(id);
-  if (id) {
-    return `https://arweave.net/${id}`;
-  } else {
-    return familiarPackageName;
+const getKey = () => {
+  const key = "hacky";
+  try {
+    key = require("../../" + require("../../walletPath").walletPath);
+    return key;
+    console.log("key set", key);
+  } catch {
+    return key;
+    console.warn("key not set yet, run inpm login");
   }
-
-  // switch (familiarPackageName) {
-  //   case "arql-ops":
-  //     return "https://kybjhezuyftg.arweave.net/ITTPLYoxidZzAJP50FQ03QJUSkkh9iKHcmMcLZOvqtQ";
-  //   case "my-package":
-  //     return "https://arweave.net/E1lBJ20fspWahlNxOl5Gn6Whduhveqo7qe7Sl5Hf0Eo";
-  //   default:
-  //     return familiarPackageName;
-  // }
 };
 
 export default {
@@ -91,6 +84,7 @@ export default {
   // createDataTransaction,
   // getTransaction,
   // getTransactionData,
+  getKey,
   key,
   ImmutablePackageNameMapping,
 };
