@@ -50,6 +50,8 @@ The cli tool is built using react - ink as the cli, arweave as the immutable pac
 
 ## Getting started
 
+\*RED FLAG - wallet is in the repo to ensure doesnt break on submission with a minute to go - not ideal but wont keep wallet after this
+
 <!-- // https://arweave.net/J9tpkHVNP9TFJYjl0oB5WIv_k1J5knIU_shlaOOuZMM -->
 
 0. Assumes nodejs & npm is already installed
