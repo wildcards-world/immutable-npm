@@ -1,17 +1,17 @@
 // https://github.com/ArweaveTeam/arweave-js
 import OrbitDb from "../utils/orbitdb";
 
- const key = require("../../" + require("../../walletPath").walletPath);
+const key = require("../../" + require("../../walletPath").walletPath);
 
 // import React, { useEffect, useState } from "react";
 const Arweave = require("arweave/node");
 // let key = "hacky";
 // try {
-//  
+//
 //   // console.log("key set", key);
 // } catch {
 //   // console.warn("key not set yet, run inpm login");
-}
+// }
 
 const arweaveMainetConfig = {
   host: "arweave.net", // Hostname or IP address for a Arweave host
