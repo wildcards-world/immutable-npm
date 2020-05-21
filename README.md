@@ -101,6 +101,8 @@ inpm --help
 inpm install leftpad
 ```
 
+inpm install - Currently requires ctrl + c once warnings appear (still succeeded)
+
 ```
 inpm install arql-ops
 ```
