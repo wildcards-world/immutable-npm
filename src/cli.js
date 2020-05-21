@@ -1,4 +1,5 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --no-warnings
+// --no-warning flag should be removed when debugging
 import React from "react";
 import { render } from "ink";
 
