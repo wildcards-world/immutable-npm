@@ -18,7 +18,7 @@ _Under active development as part of the [New York Blockchain Week Hackathon](ht
   - [Demo of login and publish](#Demo-of-login-and-publish)
   - [Further work](#further-work)
   - [Resources used to build this tool](#resources-used-to-build-this-tool)
-  - [Debugging help commands](#Debugging-help-commands)
+  - [Debugging helper commands](#Debugging-helper-commands)
 
 ## How it works
 
@@ -46,7 +46,7 @@ Example usage `inpm install arql-ops`
 
 ## Getting started
 
-// https://arweave.net/J9tpkHVNP9TFJYjl0oB5WIv_k1J5knIU_shlaOOuZMM
+<!-- // https://arweave.net/J9tpkHVNP9TFJYjl0oB5WIv_k1J5knIU_shlaOOuZMM -->
 
 1. Clone the repo ⤴️
 2. Build the program
@@ -55,7 +55,7 @@ Example usage `inpm install arql-ops`
 npm run babel
 ```
 
-3. Make the package executable
+3. Make the package executable (babel generated file executable)
 
 ```
 chmod +x ./bin/cli.js
@@ -69,11 +69,25 @@ npm link
 
 5. Test by installing some package
 
+- Mutable
+
 ```
 inpm install leftpad
 ```
 
+- Immutable
+
+```
+inpm install arql-ops
+```
+
+\*\* Side note: Adding `--no-warnings` to line 1 of cli improves the output experience although causes to break on some systems
+
 ## Usage
+
+```
+inpm --help
+```
 
 ```
 inpm install leftpad
@@ -88,15 +102,15 @@ inpm login
 ```
 
 ```
-inpm publish ./my-package.tar.gz
+inpm zip package-name.tar.gz path-to-package-folder       (note: not packages larger than 10mb)
+```
+
+```
+inpm publish package-name path-to-tar.gz-package
 ```
 
 ```
 inpm {any other normal npm command}
-```
-
-```
-inpm --help
 ```
 
 ```
@@ -121,6 +135,8 @@ inpm --version
 
 - Change the name to something that is equally simple and doesn't conflict with [inpm](https://www.npmjs.com/package/inpm). Part of me wishes I could contact the developer of `inpm` (npm registry version) and ask to take the name but that would truly go against exactly the problem this package solves 😂
 
+- Have a script that maps npm registry packages onto arweave
+
 ## Resources used to build this tool
 
 [creating a node js cli tool](https://x-team.com/blog/a-guide-to-creating-a-nodejs-command/)
@@ -139,8 +155,10 @@ inpm --version
 
 [Console to svg tool](https://nbedos.github.io/termtosvg/)
 
-## Debugging help commands
+## Debugging helper commands
 
 `tar -zcvf my-package.tar.gz my-package`
+
 `npm unlink --no-save inpm`
+
 `npm unlink`

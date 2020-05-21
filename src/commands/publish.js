@@ -16,6 +16,16 @@ const Publish = ({ args }) => {
   const publishPackage = async () => {
     let key = Arweave.key;
 
+    if (key == "hacky") {
+      // so so hacky but running out of time
+      console.warn("Please run");
+      console.warn("inpm login");
+      console.warn(
+        "To configure your wallet before attempting to publish a package"
+      );
+      exit();
+    }
+
     // const packageName = "my-package";
     // const packageZipPath = "./my-package.tar.gz";
     let packageName = "";
