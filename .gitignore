@@ -4,8 +4,6 @@ bin/
 
 .DS_Store
 
-arweave-wallet-key.json
-
 walletPath.json
 
 todo.md
