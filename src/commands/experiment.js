@@ -7,7 +7,6 @@ const Experiment = () => {
     const orbitDBTest = async () => {
       const db = await OrbitDb.connectToCollection();
       console.log(await OrbitDb.getPackage(db, "my-package"));
-      console.log(await OrbitDb.getPackage(db, "arql-ops"));
     };
     orbitDBTest();
   }, []);

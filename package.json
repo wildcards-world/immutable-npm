@@ -32,6 +32,7 @@
     "ink-text-input": "^3.2.2",
     "ipfs": "^0.43.3",
     "meow": "^7.0.0",
+    "my-package": "https://arweave.net/E1lBJ20fspWahlNxOl5Gn6Whduhveqo7qe7Sl5Hf0Eo",
     "orbit-db": "^0.23.1",
     "react": "^16.13.1",
     "test": "https://arweave.net/XOgrAV77_O-Kd5llk2LnDextMIvjXsgxtvRpyrIWc68"

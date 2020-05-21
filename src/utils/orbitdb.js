@@ -38,7 +38,7 @@ const connectToCollection = async () => {
 };
 
 const savePackage = async (db, packageName, packageId) => {
-  await db.put(packageName, packageId);
+  return await db.put(packageName, packageId);
 };
 
 const getPackage = async (db, packageName) => {

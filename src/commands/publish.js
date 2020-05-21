@@ -49,29 +49,40 @@ const Publish = ({ args }) => {
       exit();
     }
 
-    // let myPackage = fs.readFileSync(packageZipPath);
+    let myPackage = fs.readFileSync(packageZipPath);
 
-    // let transaction = await Arweave.arweave.createTransaction(
-    //   {
-    //     data: myPackage,
-    //   },
-    //   key
-    // );
-    // transaction.addTag("Content-Type", "application/x-gzip");
-    // transaction.addTag("package-name", packageName);
+    let transaction = await Arweave.arweave.createTransaction(
+      {
+        data: myPackage,
+      },
+      key
+    );
+    transaction.addTag("Content-Type", "application/x-gzip");
+    transaction.addTag("package-name", packageName);
 
     // console.log(transaction);
-    // const sign = await Arweave.arweave.transactions.sign(transaction, key);
-    // const response = await Arweave.arweave.transactions.post(transaction);
+    const sign = await Arweave.arweave.transactions.sign(transaction, key);
+    const response = await Arweave.arweave.transactions.post(transaction);
 
-    // const packageId = response.config.data.id; //TODO
+    const packageId = JSON.parse(response.config.data).id;
 
-    // const db = await OrbitDb.connectToCollection();
-    // const savepackage = await OrbitDb.savePackage(db, packageName, packageId);
+    // console.log("response.config.data");
+    // console.log(response.config.data);
+    // console.log(typeof response.config.data);
+    // console.log("response.config.data.id");
+    // console.log(response.config.data.id);
+    console.log(packageId);
+    setStatusMessage({
+      color: "#FEFFCC",
+      message: "package id: " + packageId,
+    });
 
-    // console.log(savepackage);
+    const db = await OrbitDb.connectToCollection();
+    const savepackage = await OrbitDb.savePackage(db, packageName, packageId);
 
-    // exit();
+    console.log(savepackage);
+
+    exit();
   };
   useEffect(() => {
     publishPackage();
